@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Odbc;
@@ -11,6 +11,7 @@ namespace CapaModelo_prototipoumg2k26.Repositorios
     public abstract class RepositorioMaestro : Repositorio
     {
         private DataTable dtTablaDatos; // Establece la tabla de datos para las consultas
+
         public int EjecucionNonQuery(string _comandoTexto, List<OdbcParameter> _parametros, CommandType _comandoTipo)
         {
             using (var conexion = ObtenerConexion())
@@ -26,7 +27,8 @@ namespace CapaModelo_prototipoumg2k26.Repositorios
                 }
             }
         }
-        public DataTable EjecucionConsulta (string _comandoTexto, CommandType _comandoTipo)
+
+        public DataTable EjecucionConsulta(string _comandoTexto, CommandType _comandoTipo)
         {
             dtTablaDatos = new DataTable();
             using (var conexion = ObtenerConexion()) //Obtener conexion a la BD
@@ -41,6 +43,32 @@ namespace CapaModelo_prototipoumg2k26.Repositorios
                         dtTablaDatos.Load(reader);  //Llenar la tabla de datos 
                 }
                 return dtTablaDatos; // retorno de la tabla de datos
+            }
+        }
+
+        //==========================
+        // NUEVA SOBRECARGA: consulta con parámetros (para filtros en reportes)
+        //==========================
+        // Se agrega esta versión porque el módulo de Reportes necesita
+        // aplicar filtros (WHERE ... = ?) en consultas de SOLO LECTURA,
+        // algo que la EjecucionConsulta original no soportaba.
+        // No modifica el comportamiento de los métodos existentes.
+        public DataTable EjecucionConsulta(string _comandoTexto, List<OdbcParameter> _parametros, CommandType _comandoTipo)
+        {
+            dtTablaDatos = new DataTable();
+            using (var conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                using (var ocComando = new OdbcCommand())
+                {
+                    ocComando.Connection = conexion;
+                    ocComando.CommandText = _comandoTexto;
+                    ocComando.CommandType = _comandoTipo;
+                    ocComando.Parameters.AddRange(_parametros.ToArray());
+                    using (var reader = ocComando.ExecuteReader())
+                        dtTablaDatos.Load(reader);
+                }
+                return dtTablaDatos;
             }
         }
     }
