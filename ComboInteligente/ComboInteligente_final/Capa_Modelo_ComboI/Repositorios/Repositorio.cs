@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaModelo_prototipoumg2k26.Repositorios
+namespace Capa_Modelo_ComboI.Repositorios
 {
     public abstract class Repositorio
     {

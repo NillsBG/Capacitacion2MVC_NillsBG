@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3901F34-0D3F-49C4-BF6B-12B529F54586}</ProjectGuid>
+    <ProjectGuid>{9988754A-9511-41A4-8D5C-EAA7A0674C36}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CapaControlador_prototipoumg2k26</RootNamespace>
-    <AssemblyName>CapaControlador_prototipoumg2k26</AssemblyName>
+    <RootNamespace>Capa_Vista_ComboI</RootNamespace>
+    <AssemblyName>Capa_Vista_ComboI</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,15 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CapaModelo_prototipoumg2k26">
-      <HintPath>..\CapaModelo_prototipoumg2k26\bin\Debug\CapaModelo_prototipoumg2k26.dll</HintPath>
+    <Reference Include="CapaControlador_prototipoumg2k26">
+      <HintPath>..\..\..\prototipoumg2k26\CapaControlador_prototipoumg2k26\bin\Debug\CapaControlador_prototipoumg2k26.dll</HintPath>
+    </Reference>
+    <Reference Include="Capa_Controlador_ComboI">
+      <HintPath>..\Capa_Controlador_ComboI\bin\Debug\Capa_Controlador_ComboI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,13 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EstadoEntidad.cs" />
-    <Compile Include="ModeloEmpleado.cs" />
-    <Compile Include="ModeloReporte.cs" />
+    <Compile Include="ComboI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComboI.Designer.cs">
+      <DependentUpon>ComboI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <EmbeddedResource Include="ComboI.resx">
+      <DependentUpon>ComboI.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
