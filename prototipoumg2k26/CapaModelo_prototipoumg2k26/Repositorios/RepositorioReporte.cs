@@ -20,7 +20,7 @@ namespace CapaModelo_prototipoumg2k26.Repositorios
         public RepositorioReporte()
         {
             selectAll = "SELECT * FROM Tbl_Reporte";
-            // FechaGeneracion no se incluye: la pone la base de datos automáticamente (DEFAULT CURRENT_TIMESTAMP)
+
             insert = "INSERT INTO Tbl_Reporte (NombreReporte, TipoReporte, DescripcionReporte, IdUsuario_Reporte) VALUES (?, ?, ?, ?)";
             update = "UPDATE Tbl_Reporte SET NombreReporte=?, TipoReporte=?, DescripcionReporte=?, IdUsuario_Reporte=? WHERE IdReporte=?";
             delete = "DELETE FROM Tbl_Reporte WHERE IdReporte=?";

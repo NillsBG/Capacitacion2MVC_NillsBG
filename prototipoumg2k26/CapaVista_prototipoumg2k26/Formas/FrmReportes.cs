@@ -23,6 +23,7 @@ namespace CapaVista_prototipoumg2k26.Formas
 
         private void FrmReportes_Load(object sender, EventArgs e)
         {
+            comboI1.llenarComboSinFiltro("Tbl_Reporte", "IdReporte", "NombreReporte");
             listaReportes();
         }
 
@@ -112,5 +113,7 @@ namespace CapaVista_prototipoumg2k26.Formas
             txtDescripcion.Clear();
             txtIdUsuario.Text = "1"; // valor por defecto: usuario "admin" de tus datos de prueba
         }
+
+        
     }
 }

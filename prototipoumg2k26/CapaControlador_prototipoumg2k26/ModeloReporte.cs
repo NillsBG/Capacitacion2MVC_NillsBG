@@ -92,5 +92,11 @@ namespace CapaControlador_prototipoumg2k26
         {
             return ListaReportes.FindAll(r => r._nombreReporte.Contains(filter) || r._tipoReporte.Contains(filter));
         }
+
+
+        public IEnumerable<ModeloReporte> FindByUsuario(int idUsuario)
+        {
+            return ListaReportes.FindAll(r => r._idUsuarioReporte == idUsuario);
+        }
     }
 }
