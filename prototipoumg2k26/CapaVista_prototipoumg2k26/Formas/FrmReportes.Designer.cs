@@ -34,6 +34,7 @@ namespace CapaVista_prototipoumg2k26.Formas
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.comboI1 = new Capa_Vista_ComboI.ComboI();
+            this.btnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).BeginInit();
             this.panIngresoDatos.SuspendLayout();
             this.SuspendLayout();
@@ -161,7 +162,7 @@ namespace CapaVista_prototipoumg2k26.Formas
             // btnBorrar
             // 
             this.btnBorrar.BackColor = System.Drawing.Color.HotPink;
-            this.btnBorrar.Location = new System.Drawing.Point(830, 408);
+            this.btnBorrar.Location = new System.Drawing.Point(716, 410);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(100, 28);
             this.btnBorrar.TabIndex = 3;
@@ -172,7 +173,7 @@ namespace CapaVista_prototipoumg2k26.Formas
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.Info;
-            this.btnEditar.Location = new System.Drawing.Point(720, 408);
+            this.btnEditar.Location = new System.Drawing.Point(606, 410);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(100, 28);
             this.btnEditar.TabIndex = 4;
@@ -183,7 +184,7 @@ namespace CapaVista_prototipoumg2k26.Formas
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnNuevo.Location = new System.Drawing.Point(610, 408);
+            this.btnNuevo.Location = new System.Drawing.Point(496, 410);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(100, 28);
             this.btnNuevo.TabIndex = 5;
@@ -198,11 +199,23 @@ namespace CapaVista_prototipoumg2k26.Formas
             this.comboI1.Size = new System.Drawing.Size(498, 25);
             this.comboI1.TabIndex = 7;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnImprimir.Location = new System.Drawing.Point(830, 410);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(100, 28);
+            this.btnImprimir.TabIndex = 8;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // FrmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 464);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.comboI1);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEditar);
@@ -241,5 +254,6 @@ namespace CapaVista_prototipoumg2k26.Formas
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
         private Capa_Vista_ComboI.ComboI comboI1;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }
