@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Reportes</title>
+<style>
+    body {
+        font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+        font-size: 13px;
+        color: #222222;
+        background-color: #FFFFFF;
+        margin: 12px 18px;
+        line-height: 1.5;
+    }
+    h1 {
+        font-family: "Lucida Sans", "Segoe UI", sans-serif;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 20px;
+        color: #5C121A;
+        border-bottom: 2px solid #5C121A;
+        padding-bottom: 4px;
+        margin-bottom: 10px;
+    }
+    h2 {
+        font-family: "Lucida Sans", "Segoe UI", sans-serif;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 15px;
+        color: #8C2F2A;
+        margin-top: 22px;
+        margin-bottom: 6px;
+    }
+    p {
+        margin: 6px 0;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 8px 0 14px 0;
+    }
+    th, td {
+        border: 1px solid #CCCCCC;
+        padding: 6px 8px;
+        text-align: left;
+        vertical-align: top;
+        font-size: 12px;
+    }
+    th {
+        background-color: #EFE6D6;
+        color: #23575B;
+        font-weight: bold;
+    }
+    tr:nth-child(even) td {
+        background-color: #FAF7F2;
+    }
+    ol, ul {
+        margin: 6px 0 6px 22px;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 4px;
+    }
+    .nota {
+        background-color: #FDF3E7;
+        border-left: 4px solid #C58F3E;
+        padding: 8px 12px;
+        margin: 10px 0;
+    }
+    .error-box {
+        background-color: #FBEAEA;
+        border-left: 4px solid #B5763F;
+        padding: 8px 12px;
+        margin: 10px 0;
+    }
+    code {
+        background-color: #F2F2F2;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 12px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Ayuda &mdash; Módulo de Reportes</h1>
+
+<p>
+Esta sección explica cómo usar la pantalla de <b>Mantenimiento de Reportes</b> y
+la ventana de <b>vista previa e impresión</b> asociada, incluida en el sistema
+como parte del componente Reportes.
+</p>
+
+<h2>1. Pantalla principal (Mantenimiento de Reportes)</h2>
+
+<p>
+Muestra el listado de todos los reportes registrados y permite buscar, crear,
+editar, borrar e imprimir cada registro.
+</p>
+
+<table>
+    <tr>
+        <th>Elemento</th>
+        <th>Función</th>
+    </tr>
+    <tr>
+        <td><b>Buscar</b></td>
+        <td>Filtra la tabla de reportes por nombre a medida que se escribe.</td>
+    </tr>
+    <tr>
+        <td><b>Tabla de resultados</b></td>
+        <td>Lista todos los reportes registrados. Seleccione una fila antes de
+        Editar, Borrar o Imprimir.</td>
+    </tr>
+    <tr>
+        <td><b>Nuevo</b></td>
+        <td>Habilita el formulario de ingreso para registrar un reporte nuevo.</td>
+    </tr>
+    <tr>
+        <td><b>Editar</b></td>
+        <td>Carga los datos de la fila seleccionada en el formulario para
+        modificarlos.</td>
+    </tr>
+    <tr>
+        <td><b>Grabar</b></td>
+        <td>Guarda el reporte nuevo o los cambios del reporte en edición.</td>
+    </tr>
+    <tr>
+        <td><b>Borrar</b></td>
+        <td>Elimina el reporte seleccionado, previa confirmación.</td>
+    </tr>
+    <tr>
+        <td><b>Imprimir</b></td>
+        <td>Abre la ventana de vista previa del reporte (ver sección 3).</td>
+    </tr>
+</table>
+
+<h2>2. Campos del formulario</h2>
+
+<table>
+    <tr>
+        <th>Campo</th>
+        <th>Descripción</th>
+        <th>Obligatorio</th>
+    </tr>
+    <tr>
+        <td>Nombre</td>
+        <td>Nombre descriptivo del reporte.</td>
+        <td>Sí</td>
+    </tr>
+    <tr>
+        <td>Tipo</td>
+        <td>Categoría o tipo de reporte.</td>
+        <td>Sí</td>
+    </tr>
+    <tr>
+        <td>Descripción</td>
+        <td>Detalle adicional sobre el contenido del reporte.</td>
+        <td>No</td>
+    </tr>
+    <tr>
+        <td>Id Usuario</td>
+        <td>Identificador numérico del usuario que generó el reporte.</td>
+        <td>Sí (numérico)</td>
+    </tr>
+</table>
+
+<div class="nota">
+<b>Nota:</b> el campo Id Usuario debe contener únicamente números. Si se
+ingresa un valor no numérico, el sistema muestra un aviso y no permite grabar.
+</div>
+
+<h2>3. Ventana de vista previa e impresión</h2>
+
+<p>
+Al presionar <b>Imprimir</b> se abre una ventana independiente que muestra el
+reporte generado con Microsoft ReportViewer, con controles para paginar,
+buscar, exportar y enviar a imprimir.
+</p>
+
+<ol>
+    <li>Seleccione un reporte en la tabla principal.</li>
+    <li>Presione el botón <b>Imprimir</b>.</li>
+    <li>En la ventana que se abre, use la barra de herramientas superior para
+    navegar entre páginas, hacer zoom, exportar a PDF/Excel o imprimir
+    directamente.</li>
+</ol>
+
+<h2>4. Solución de problemas frecuentes</h2>
+
+<div class="error-box">
+<b>"No se ha especificado la definición del informe"</b><br>
+Ocurre cuando el nombre del recurso incrustado no coincide con el archivo
+<code>.rdlc</code> real, o cuando ese archivo no tiene su propiedad
+<i>Build Action</i> configurada como <i>Embedded Resource</i>.
+</div>
+
+<div class="error-box">
+<b>"No se ha proporcionado ninguna instancia de origen de datos para el
+origen de datos '...'"</b><br>
+El nombre usado al crear el <code>ReportDataSource</code> en código no
+coincide con el nombre del DataSet definido dentro del archivo
+<code>.rdlc</code>. Verifique el nombre exacto en el panel
+"Datos del informe" del diseñador del reporte.
+</div>
+
+<p>
+Si el problema persiste después de verificar ambos puntos, contacte al
+encargado del componente Reportes.
+</p>
+
+</body>
+</html>

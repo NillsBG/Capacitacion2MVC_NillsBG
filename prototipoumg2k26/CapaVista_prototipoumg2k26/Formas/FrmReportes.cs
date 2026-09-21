@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaControlador_prototipoumg2k26;
+using CapaVista_prototipoumg2k26.Reportes;
 
 namespace CapaVista_prototipoumg2k26.Formas
 {
@@ -114,6 +115,10 @@ namespace CapaVista_prototipoumg2k26.Formas
             txtIdUsuario.Text = "1"; // valor por defecto: usuario "admin" de tus datos de prueba
         }
 
-        
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            frmReportes reporte = new frmReportes();
+            reporte.Show();
+        }
     }
 }
