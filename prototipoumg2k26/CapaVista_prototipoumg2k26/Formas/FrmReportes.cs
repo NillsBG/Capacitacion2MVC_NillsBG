@@ -120,5 +120,10 @@ namespace CapaVista_prototipoumg2k26.Formas
             frmReportes reporte = new frmReportes();
             reporte.Show();
         }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:/AyudaRisko/CapaRisko.chm", "Reportes.htm");
+        }
     }
 }

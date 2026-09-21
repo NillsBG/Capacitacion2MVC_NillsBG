@@ -35,6 +35,7 @@ namespace CapaVista_prototipoumg2k26.Formas
             this.btnNuevo = new System.Windows.Forms.Button();
             this.comboI1 = new Capa_Vista_ComboI.ComboI();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnAyuda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).BeginInit();
             this.panIngresoDatos.SuspendLayout();
             this.SuspendLayout();
@@ -210,11 +211,23 @@ namespace CapaVista_prototipoumg2k26.Formas
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
+            // btnAyuda
+            // 
+            this.btnAyuda.BackColor = System.Drawing.Color.Aqua;
+            this.btnAyuda.Location = new System.Drawing.Point(364, 410);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(100, 28);
+            this.btnAyuda.TabIndex = 9;
+            this.btnAyuda.Text = "Ayuda";
+            this.btnAyuda.UseVisualStyleBackColor = false;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
+            // 
             // FrmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 464);
+            this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.comboI1);
             this.Controls.Add(this.btnNuevo);
@@ -255,5 +268,6 @@ namespace CapaVista_prototipoumg2k26.Formas
         private System.Windows.Forms.Button btnNuevo;
         private Capa_Vista_ComboI.ComboI comboI1;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnAyuda;
     }
 }
